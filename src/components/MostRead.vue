@@ -1,7 +1,7 @@
 <template>
   <div v-if="res"> 
-  <h1>{{ res.titles.normalized }}</h1>
-  <span> {{ res.description }} </span>
+  <h1>{{ res }}</h1>
+  <span> {{ res }} </span>
   <img v-bind:src= "res.thumbnail.source"/>
   </div>
    
@@ -21,7 +21,7 @@ export default {
 
   mounted() {
     axios
-.get("https://en.wikipedia.org/api/rest_v1/page/summary/Tartu")
+.get(`https://en.wikipedia.org/api/rest_v1/feed/featured/2021/04/29`)
 .then(response => {
         console.log(response.data);
 
